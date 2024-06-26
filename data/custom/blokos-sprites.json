@@ -17,7 +17,7 @@
         ],
         "tiling": "2"
     },
-	{
+    {
         "name": "text_\u9c2a",
         "sprite": "text_U09C2A",
         "color": [
@@ -41,6 +41,24 @@
         "color": [
             "0",
             "3"
+        ],
+        "tiling": "-1"
+    },
+    {
+        "name": "aiwfc",
+        "sprite": "all i want for christmas",
+        "color": [
+            "5",
+            "2"
+        ],
+        "tiling": "0"
+    },
+    {
+        "name": "text_aiwfc",
+        "sprite": "text_all i want for christmas",
+        "color": [
+            "5",
+            "2"
         ],
         "tiling": "-1"
     },
@@ -216,6 +234,15 @@
         "tiling": "-1"
     },
     {
+        "name": "katsu",
+        "sprite": "katsu",
+        "color": [
+            "2",
+                  "3"
+        ],
+        "tiling": "-1"
+    },
+    {
         "name": "text_\u3068",
         "sprite": "text_\u3068",
         "color": [
@@ -223,6 +250,15 @@
             "3"
         ],
         "tiling": "-1"
+    },
+    {
+        "name": "seek",
+        "sprite": "seek",
+        "color": [
+            "4",
+            "1"
+        ],
+        "tiling": "0"
     },
     {
         "name": "text_\u306a",
@@ -718,5 +754,14 @@
             "3"
         ],
         "tiling": "-1"
+    },
+    {
+        "name": "zawzaw",
+        "sprite": "zawzaw",
+        "color": [
+            "5",
+            "2"
+        ],
+        "tiling": "2"
     }
 ]
