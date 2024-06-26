@@ -84,8 +84,37 @@ class TileSkeleton:
         ):
             return cls()
         raw_variants[0:0] = global_variant.split(":")
+        # Easter eggs!
+        if out.name == "-1":
+            out.easter_egg = True
+            async with bot.db.conn.cursor() as cur:
+                await cur.execute("SELECT DISTINCT name FROM tiles WHERE tiling LIKE -1 ORDER BY RANDOM() LIMIT 1")
+                out.name = (await cur.fetchall())[0][0]
+            raw_variants.insert(0, "[ify/2/3]")
+        elif out.name == "0":
+            out.easter_egg = True
+            async with bot.db.conn.cursor() as cur:
+                await cur.execute("SELECT DISTINCT name FROM tiles WHERE tiling LIKE 0 ORDER BY RANDOM() LIMIT 1")
+                # NOTE: text_anni should be tiling -1, but Hempuli messed it up I guess
+                out.name = (await cur.fetchall())[0][0]
+            raw_variants.insert(0, "[ify/3/1]")
         if out.name == "2":
-            # Easter egg!
+            out.easter_egg = True
+            async with bot.db.conn.cursor() as cur:
+                await cur.execute("SELECT DISTINCT name FROM tiles WHERE tiling LIKE 2 AND name NOT LIKE"
+                                  "'text_anni' ORDER BY RANDOM() LIMIT 1")
+                # NOTE: text_anni should be tiling -1, but Hempuli messed it up I guess
+                out.name = (await cur.fetchall())[0][0]
+            raw_variants.insert(0, "[2ify]")
+        if out.name == "2":
+            out.easter_egg = True
+            async with bot.db.conn.cursor() as cur:
+                await cur.execute("SELECT DISTINCT name FROM tiles WHERE tiling LIKE 2 AND name NOT LIKE"
+                                  "'text_anni' ORDER BY RANDOM() LIMIT 1")
+                # NOTE: text_anni should be tiling -1, but Hempuli messed it up I guess
+                out.name = (await cur.fetchall())[0][0]
+            raw_variants.insert(0, "[2ify]")
+        if out.name == "2":
             out.easter_egg = True
             async with bot.db.conn.cursor() as cur:
                 await cur.execute("SELECT DISTINCT name FROM tiles WHERE tiling LIKE 2 AND name NOT LIKE"
